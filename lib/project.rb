@@ -1,4 +1,4 @@
-#require_relative 'backer.rb'
+require_relative 'backer.rb'
 
 class Project
   
@@ -9,8 +9,9 @@ class Project
      @backers = []
    end
    
-   def add_backer(arg_of_Backer)
-     @backers << arg_of_Backer
+   def add_backer(backer)
+     @backers << backer
+     backer.backed_projects << self
    end
   
 end

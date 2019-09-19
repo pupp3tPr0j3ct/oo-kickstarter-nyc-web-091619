@@ -1,6 +1,6 @@
 
 
-#require_relative 'project.rb'
+require_relative 'project.rb'
 
 
 class Backer
@@ -17,9 +17,11 @@ class Backer
     @backed_projects
   end
 
-  def back_project(arg_of_Project_class)
-    @backed_projects << arg_of_Project_class
+  def back_project(project)
+    @backed_projects << project
+    project.backers << self
     #adds the backer to the project's backer array
+    #hoverboard should be accessed by this method
   end
   
 end
